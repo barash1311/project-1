@@ -11,8 +11,8 @@ import { getCurrentUser, signIn } from "../../lib/appwrite";
 import { useGlobalContext } from "../../context/GlobalProvider";
 
 const SignIn = () => {
-  const setIsLogged = useGlobalContext();
-  const setUser = useGlobalContext();
+  // const setIsLogged = useGlobalContext();
+  // const setUser = useGlobalContext();
   const [isSubmitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({
     email: "",
@@ -57,7 +57,7 @@ const SignIn = () => {
           />
 
           <Text className="text-2xl font-semibold text-white mt-10 font-psemibold">
-            Log in to Aora
+            Log in to Power
           </Text>
 
           <FormField
@@ -77,7 +77,7 @@ const SignIn = () => {
 
           <CustomButton
             title="Sign In"
-            handlePress={submit}
+            // handlePress={submit}
             containerStyles="mt-7"
             isLoading={isSubmitting}
           />

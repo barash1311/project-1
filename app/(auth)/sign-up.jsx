@@ -12,7 +12,7 @@ import FormField from "../../components/FormField";
 import { useGlobalContext } from "../../context/GlobalProvider";
 
 const SignUp = () => {
-  const { setUser, setIsLogged } = useGlobalContext();
+  // const { setUser, setIsLogged } = useGlobalContext();
 
   const [isSubmitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({
@@ -21,24 +21,24 @@ const SignUp = () => {
     password: "",
   });
 
-  const submit = async () => {
-    if (form.username === "" || form.email === "" || form.password === "") {
-      Alert.alert("Error", "Please fill in all fields");
-    }
+  // const submit = async () => {
+  //   if (form.username === "" || form.email === "" || form.password === "") {
+  //     Alert.alert("Error", "Please fill in all fields");
+  //   }
 
-    setSubmitting(true);
-    try {
-      const result = await createUser(form.email, form.password, form.username);
-      setUser(result);
-      setIsLogged(true);
+  //   setSubmitting(true);
+  //   try {
+  //     const result = await createUser(form.email, form.password, form.username);
+  //     setUser(result);
+  //     setIsLogged(true);
 
-      router.replace("./home");
-    } catch (error) {
-      Alert.alert("Error", error.message);
-    } finally {
-      setSubmitting(false);
-    }
-  };
+  //     router.replace("./home");
+  //   } catch (error) {
+  //     Alert.alert("Error", error.message);
+  //   } finally {
+  //     setSubmitting(false);
+  //   }
+  // };
 
   return (
     <SafeAreaView className="bg-primary h-full">
@@ -56,7 +56,7 @@ const SignUp = () => {
           />
 
           <Text className="text-2xl font-semibold text-white mt-10 font-psemibold">
-            Sign Up to Aora
+            Sign Up to Power
           </Text>
 
           <FormField
@@ -83,7 +83,7 @@ const SignUp = () => {
 
           <CustomButton
             title="Sign Up"
-            handlePress={submit}
+            // handlePress={submit}
             containerStyles="mt-7"
             isLoading={isSubmitting}
           />

@@ -1,6 +1,7 @@
 import { TouchableOpacity, Text } from "react-native";
 import React from "react";
 import { Container } from "postcss";
+import { Link } from "expo-router";
 
 const CustomButton = ({
   title,
@@ -19,7 +20,8 @@ const CustomButton = ({
       disabled={isLoading}
     >
       <Text className={`text-primary font-psemibold text-lg ${textStyles}`}>
-        {title}
+        <Link href={"/home"}>{title}</Link>
+        {/* created changes here */}
       </Text>
     </TouchableOpacity>
   );
